@@ -1,13 +1,13 @@
-### Tarification électrique - Projet Hands-On Blent.ai
+# Tarification électrique - Projet Hands-On Blent.ai
 
 ## Introduction
 
 
 ## Base de données
 
-# Source des données
+### Source des données
 
-# Base de données Postgres
+### Base de données Postgres
 
 
 ## Airflow
@@ -15,15 +15,15 @@
 
 ## API
 
-# Formule pour estimer la tarification
+### Formule pour estimer la tarification
 
-# API Flask
+### API Flask
 
-# Benchmark
+### Benchmark
 
 
 ## Architecture
 
-# Diagramme
+### Diagramme
 
-# Estimation des coûts
+### Estimation des coûts
