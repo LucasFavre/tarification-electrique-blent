@@ -28,10 +28,12 @@ Nous aurons donc deux tables qui correspondent à nos deux sources de données, 
 ### Formule pour estimer la tarification
 <p align="justify">Pour que les potentiels consommateurs estiment la tarification électrique qui correspond à leur consommation, l'entreprise a mis à disposition une formule que nous allons devoir implémenter.
 Cette formule comporte des paramètres donnés par l'entreprise, tel que le prix de base du kwH et le prix du contrat. Elle dépend aussi de paramètres propres à l'individu qu'il devra renseigner, notamment sur le nombre de personnes dans le foyer et sa surface ainsi que son l'utilisation d'électricité (chauffage, eau, etc). Finalement, la formule dépend aussi de deux paramètres, alpha et M qui représentent la consommation locale du logement, c'est à dire la consommation de la commune et de la région où est situé le logement. Ces paramètres seront ceux calculés à partir des données stockées dans notre base de données.
-</p>
+
+Le paramètre alpha est calculé en faisant le rapport entre la consommation prévue d'une commune à l'année n+1 par rapport à l'année courante. Or, la dernière année disponible dans les donnée Enedis est 2022. Nous utiliserons donc plutôt le rapport entre la consommation d'une commune en 2022 et celle en 2021 pour estimer alpha.</p>
+
 
 ### API Flask
-<p align="justify">Pour implémenter cette formule d'estimation de tarification, nous créons une VM Compute Engine sur GCP qui nous permettra d'héberger une API Flask. Cette API possède seulement une requête GET qui renverra l'estimation du prix par mois, à partir des différents paramètres vus dans la section précédente. Elle pourra être appelée depuis une interface web par exemple sur le site de l'entreprise.</p>
+<p align="justify">Pour implémenter cette formule d'estimation de tarification, nous créons une VM Compute Engine sur GCP qui nous permettra d'héberger une API Flask. Cette API possède uniquement une requête GET qui renverra l'estimation du prix par mois, à partir des différents paramètres vus dans la section précédente. Elle pourra être appelée depuis une interface web par exemple sur le site de l'entreprise.</p>
 
 ### Benchmark
 <p align="justify">A l'aide la librairie wrk, nous pouvons effectuer un test de benchmark pour voir si notre API respecte les contraintes imposées par l'API. Ces dernières étant que l'API devra être capable de toujours répondre en moins de 6 secondes, même en situation tendue. Voici les résultats que nous obtenons, qui nous montre que la contrainte est largement respectée.</p>
