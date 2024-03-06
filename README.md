@@ -38,8 +38,13 @@ Cette formule comporte des paramètres donnés par l'entreprise, tel que le prix
 
 ![Résultat du benchmark de notre API](img/benchmark_app.png)
 
-## Architecture
+## Conclusion
 
-### Diagramme
+### Architecture
+Nous pouvons modéliser l'architecture de ce projet avec ce diagramme.
+![Diagramme d'architecture du projet](img/diagramme_architecture_tarification.png)
 
 ### Estimation des coûts
+<p align="justify">Une des contraintes à respecter pour l'entreprise était que l'implémentation de ce projet sur un service Cloud ne coûte pas plus de 100 euros par mois. On peut vérifier que cette contrainte est respectée grâce au calculateur de coûts de Google Cloud Platform. On rentre les informations des éléments nécessaires pour le projet avec leurs spécifications, et on se rend donc bien compte qu'on est juste dans le budget.</p>
+
+![Estimation du coût du projet sur GCP pour un mois](img/estimation_couts.png)
